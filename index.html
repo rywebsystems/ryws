@@ -1,93 +1,309 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV. RY Web Systems</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV. RY Web Systems — Jasa Pembuatan Website & Systems</title>
+  <meta name="description" content="CV. RY Web Systems menyediakan jasa pembuatan website, web apps, dan sistem bisnis end-to-end. Cepat, aman, dan scalable." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Crect width='100%25' height='100%25' rx='24' fill='%230ea5e9'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-size='68' font-family='sans-serif' fill='white'%3ERY%3C/text%3E%3C/svg%3E" />
+  <meta property="og:title" content="CV. RY Web Systems — Jasa Pembuatan Website & Systems" />
+  <meta property="og:description" content="Website modern, cepat, dan aman untuk bisnis Anda." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0ea5e9/ffffff&text=CV.+RY+Web+Systems" />
   <style>
-    body {
-      background: #ffffff; /* putih */
-      color: #000000; /* teks hitam */
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg: #0b1220;
+      --card: #0f172a;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --brand: #0ea5e9;
+      --brand-2: #22d3ee;
+      --ring: 0 0 0 3px color-mix(in oklab, var(--brand) 40%, transparent);
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.55);
+      --shadow-soft: 0 6px 18px rgba(2, 6, 23, 0.35);
+      --maxw: 1200px;
     }
-
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background: radial-gradient(1200px 600px at 80% -10%, rgba(34,211,238,.15), transparent 60%), var(--bg); color:var(--text); font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(92%, var(--maxw)); margin-inline:auto; }
     header {
-      background-color: rgba(9, 93, 64, 0.8); /* hijau transparan */
-      position: sticky;
-      top: 0;
-      padding: 1rem;
+      position: sticky; top:0; backdrop-filter: blur(8px);
+      background: color-mix(in oklab, var(--bg) 70%, transparent);
+      z-index: 50; border-bottom: 1px solid rgba(148,163,184,.12);
     }
-
-    header h1 {
-      margin: 0;
-      color: #c13111; /* judul merah bata */
-    }
-
-    nav a {
-      color: #000000;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    h2, h3 {
-      color: #c13111; /* judul lain merah bata */
-    }
-
-    p, li {
-      color: #000000; /* teks biasa hitam */
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #f2f2f2;
-      color: #000000;
-      margin-top: 20px;
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: .9rem 0; }
+    .brand { display:flex; gap:.7rem; align-items:center; font-weight:800; letter-spacing:.2px; }
+    .logo { width:36px; height:36px; border-radius:10px; display:grid; place-items:center; background:linear-gradient(135deg,var(--brand),var(--brand-2)); box-shadow:var(--shadow-soft); }
+    .logo span { font-weight:900; color:#00131a; filter: drop-shadow(0 1px 0 rgba(255,255,255,.5)); }
+    .nav a.btn { padding:.6rem .9rem; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#04202b; font-weight:700; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06); }
+    .nav a.btn:hover { transform: translateY(-1px); transition:.2s ease; text-decoration:none; }
+    .hero { display:grid; grid-template-columns: 1.15fr .85fr; gap:2rem; padding: 3rem 0 2rem; align-items:center; }
+    .hero h1 { font-size: clamp(28px, 4.2vw, 48px); line-height:1.15; margin:.2rem 0 .8rem; letter-spacing:.2px; }
+    .hero p { color: var(--muted); font-size: 1.05rem; }
+    .kpis { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1.2rem; }
+    .kpi { background: linear-gradient(180deg, rgba(14,165,233,.08), rgba(34,211,238,.05)); border:1px solid rgba(148,163,184,.2); border-radius: var(--radius); padding:1rem; }
+    .kpi .big { font-size:1.6rem; font-weight:900; }
+    .card { background:var(--card); border:1px solid rgba(148,163,184,.12); border-radius: var(--radius); box-shadow: var(--shadow-soft); }
+    .grid { display:grid; gap:1.2rem; }
+    section { padding: 3rem 0; }
+    h2 { font-size: clamp(22px, 3.2vw, 34px); margin:.2rem 0 1rem; }
+    .services { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .svc { padding:1.1rem; }
+    .svc h3 { margin:.2rem 0 .5rem; font-size:1.05rem; }
+    .badge { display:inline-block; font-weight:700; font-size:.75rem; background:rgba(34,211,238,.18); color:#7de8fb; border:1px solid rgba(125,232,251,.4); padding:.25rem .55rem; border-radius:999px; }
+    .cta { padding:1.2rem; display:flex; gap:1rem; flex-wrap:wrap; align-items:center; justify-content:space-between; }
+    .cta .btn { padding:.8rem 1rem; background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#04202b; border-radius:12px; font-weight:800; border:none; box-shadow:var(--shadow); cursor:pointer; }
+    .cta .btn:hover { transform: translateY(-1px); }
+    .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .price { padding:1.1rem; }
+    .price h3 { margin:.3rem 0; }
+    .price ul { margin:.6rem 0 0; padding-left:1.2rem; color:var(--muted); }
+    .mute { color:var(--muted); }
+    .portfolio { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .shot { overflow:hidden; }
+    .shot img { width:100%; height:180px; object-fit:cover; border-radius:12px; opacity:.95; }
+    .faq details { background:var(--card); border:1px solid rgba(148,163,184,.14); border-radius:12px; padding:.8rem 1rem; }
+    .faq details + details { margin-top:.7rem; }
+    .contact .box { padding:1rem; }
+    footer { color:var(--muted); border-top:1px solid rgba(148,163,184,.12); padding: 1.4rem 0 2rem; }
+    .taglist { display:flex; flex-wrap:wrap; gap:.5rem; }
+    .tag { font-size:.8rem; padding:.35rem .6rem; background:#0b162b; border:1px solid rgba(148,163,184,.18); border-radius:999px; color:#96b2ff; }
+    .dot { width:8px; height:8px; border-radius:999px; background:#22c55e; display:inline-block; margin-right:.35rem; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .kpis { grid-template-columns: 1fr 1fr; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CV. RY Web Systems",
+    "url": "https://example.com",
+    "description": "Jasa pembuatan website, web apps, dan sistem bisnis.",
+    "areaServed": "Indonesia",
+    "telephone": "+62-8xx-xxxx-xxxx",
+    "sameAs": ["https://github.com/username"]
+  }
+  </script>
 </head>
 <body>
+  <!-- NAV -->
   <header>
-    <h1>CV. RY Web Systems</h1>
-    <nav>
-      <a href="#layanan">Layanan</a>
-      <a href="#portofolio">Portofolio</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
+    <div class="wrap nav" role="navigation" aria-label="Navigasi utama">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"><span>RY</span></div>
+        <div>
+          <div style="font-size:1.05rem">CV. RY Web Systems</div>
+          <div class="mute" style="font-size:.8rem">Website & Business Systems</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:.6rem; align-items:center">
+        <a href="#layanan">Layanan</a>
+        <a href="#portofolio">Portofolio</a>
+        <a href="#harga">Harga</a>
+        <a class="btn" href="https://wa.me/62812xxxxxxx?text=Halo%20RY%20Web%20Systems%2C%20saya%20butuh%20website." target="_blank" rel="noopener">Konsultasi Gratis</a>
+      </div>
+    </div>
   </header>
 
+  <!-- HERO -->
   <main>
+    <section class="wrap hero">
+      <div>
+        <span class="badge">Solusi Digital Cepat & Aman</span>
+        <h1>Bangun Website & Sistem Bisnis <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Tanpa Ribet</span></h1>
+        <p>CV. RY Web Systems membantu bisnis Anda memiliki website modern, performa tinggi, SEO-ready, dan sistem internal yang efisien. Fokus pada bisnis, teknis biar kami yang urus.</p>
+        <div class="kpis">
+          <div class="kpi card">
+            <div class="big">+50</div>
+            <div class="mute">Proyek Diselesaikan</div>
+          </div>
+          <div class="kpi card">
+            <div class="big">7–21 hari</div>
+            <div class="mute">Waktu Pengerjaan</div>
+          </div>
+          <div class="kpi card">
+            <div class="big">99.9%</div>
+            <div class="mute">Uptime Hosting</div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="padding:1rem;">
+        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=1200&auto=format&fit=crop" alt="Ilustrasi pembuatan website" style="width:100%; border-radius:12px;">
+        <div class="mute" style="font-size:.9rem; margin-top:.6rem">Desain responsif, akses cepat, & keamanan terjaga.</div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
     <section id="layanan">
-      <h2>Layanan Kami</h2>
-      <p>Kami menyediakan jasa pembuatan website, aplikasi web, dan sistem bisnis sesuai kebutuhan Anda.</p>
+      <div class="wrap">
+        <h2>Layanan Kami</h2>
+        <div class="grid services">
+          <article class="svc card">
+            <span class="badge">Website Company Profile</span>
+            <h3>Landing Page & Profil Perusahaan</h3>
+            <p class="mute">Tampil profesional dengan website yang mobile-first, cepat, dan mudah dikelola.</p>
+          </article>
+          <article class="svc card">
+            <span class="badge">E-Commerce</span>
+            <h3>Toko Online & Pembayaran</h3>
+            <p class="mute">Integrasi pembayaran lokal (VA, e-wallet), manajemen produk, ongkir, dan promo.</p>
+          </article>
+          <article class="svc card">
+            <span class="badge">Web Apps</span>
+            <h3>Sistem Bisnis Kustom</h3>
+            <p class="mute">CRM/ERP ringan, dashboard, automasi, dan integrasi API sesuai kebutuhan.</p>
+          </article>
+          <article class="svc card">
+            <span class="badge">Maintenance</span>
+            <h3>Perawatan & Keamanan</h3>
+            <p class="mute">Backup, patch keamanan, monitoring, dan optimasi performa berkelanjutan.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
+    <!-- PROCESS -->
+    <section>
+      <div class="wrap grid cols-2">
+        <div class="card" style="padding:1.1rem;">
+          <h2>Proses Kerja</h2>
+          <ol class="mute" style="padding-left:1.1rem; margin: .6rem 0 0;">
+            <li>Discovery: pahami tujuan & scope.</li>
+            <li>Desain: wireframe → UI final.</li>
+            <li>Development: implementasi fitur inti.</li>
+            <li>Testing & QC: fungsional, performa, keamanan.</li>
+            <li>Go Live & Handover: training & dokumentasi.</li>
+          </ol>
+        </div>
+        <div class="card cta">
+          <div>
+            <h3>Butuh demo atau audit gratis?</h3>
+            <p class="mute">Kami bantu cek kebutuhan & rekomendasi stack terbaik untuk use case Anda.</p>
+          </div>
+          <a class="btn" href="mailto:hello@example.com?subject=Konsultasi%20CV.%20RY%20Web%20Systems&body=Halo%20RY%2C%20saya%20butuh%20website%20untuk...">Hubungi via Email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
     <section id="portofolio">
-      <h2>Portofolio</h2>
-      <p>Beberapa proyek yang pernah kami kerjakan untuk klien dari berbagai industri.</p>
+      <div class="wrap">
+        <h2>Portofolio</h2>
+        <div class="grid portfolio">
+          <figure class="shot card"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Proyek dashboard analitik"><figcaption class="mute" style="padding:.7rem">Dashboard Analitik — SaaS</figcaption></figure>
+          <figure class="shot card"><img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?q=80&w=1200&auto=format&fit=crop" alt="Toko online modern"><figcaption class="mute" style="padding:.7rem">E-Commerce — Fashion</figcaption></figure>
+          <figure class="shot card"><img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1200&auto=format&fit=crop" alt="Company profile"><figcaption class="mute" style="padding:.7rem">Company Profile — Service</figcaption></figure>
+        </div>
+      </div>
     </section>
 
-    <section id="kontak">
-      <h2>Kontak</h2>
-      <p>Hubungi kami untuk konsultasi: <br>
-      Email: <a href="mailto:info@rywebsystems.com">info@rywebsystems.com</a> <br>
-      WhatsApp: <a href="https://wa.me/628123456789">+62 812-3456-789</a></p>
+    <!-- PRICING -->
+    <section id="harga">
+      <div class="wrap">
+        <h2>Paket Harga</h2>
+        <div class="grid cols-2">
+          <div class="price card">
+            <span class="badge">Starter</span>
+            <h3>Mulai 3,5 jt</h3>
+            <p class="mute">Landing page cepat untuk validasi ide/bisnis.</p>
+            <ul>
+              <li>1–3 halaman, SEO dasar</li>
+              <li>Desain responsif</li>
+              <li>Form kontak / WhatsApp</li>
+            </ul>
+          </div>
+          <div class="price card">
+            <span class="badge">Business</span>
+            <h3>Mulai 9 jt</h3>
+            <p class="mute">Profil perusahaan lengkap + blog/produk.</p>
+            <ul>
+              <li>5–15 halaman, CMS</li>
+              <li>Optimasi performa & keamanan</li>
+              <li>Integrasi analitik & email</li>
+            </ul>
+          </div>
+          <div class="price card">
+            <span class="badge">E-Commerce</span>
+            <h3>Mulai 15 jt</h3>
+            <p class="mute">Toko online siap transaksi & promo.</p>
+            <ul>
+              <li>Katalog, keranjang, pembayaran lokal</li>
+              <li>Manajemen pesanan & ongkir</li>
+              <li>Voucher & laporan penjualan</li>
+            </ul>
+          </div>
+          <div class="price card">
+            <span class="badge">Custom System</span>
+            <h3>By request</h3>
+            <p class="mute">Web apps/ERP ringan sesuai alur bisnis Anda.</p>
+            <ul>
+              <li>Analisis kebutuhan & arsitektur</li>
+              <li>Integrasi API pihak ketiga</li>
+              <li>SLA & maintenance opsional</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="wrap faq">
+        <h2>FAQ</h2>
+        <details>
+          <summary><span class="dot"></span>Berapa lama pembuatan website?</summary>
+          <div class="mute">Umumnya 7–21 hari tergantung kompleksitas & jumlah halaman.</div>
+        </details>
+        <details>
+          <summary><span class="dot"></span>Apakah termasuk domain & hosting?</summary>
+          <div class="mute">Bisa termasuk (add-on) atau gunakan milik Anda. Kami bantu setup.</div>
+        </details>
+        <details>
+          <summary><span class="dot"></span>Apakah ada maintenance?</summary>
+          <div class="mute">Ada paket bulanan/tahunan: backup, patch keamanan, dan support.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+      <div class="wrap grid cols-2">
+        <div class="box card">
+          <h2>Kontak</h2>
+          <p class="mute">Siap diskusi? Kirim kebutuhan Anda, kami balas ≤24 jam kerja.</p>
+          <div class="taglist" style="margin-top:.6rem">
+            <span class="tag">Fast Response</span>
+            <span class="tag">Garansi Revisi</span>
+            <span class="tag">Dokumentasi</span>
+          </div>
+        </div>
+        <form class="box card" onsubmit="event.preventDefault(); window.open(this.action+encodeURIComponent(this.message.value),'_blank')" action="https://wa.me/62812xxxxxxx?text=">
+          <label for="message">Pesan singkat</label>
+          <textarea id="message" name="message" rows="4" placeholder="Halo RY, saya butuh website untuk ... (tulis singkat ya)" style="width:100%; margin-top:.4rem; border-radius:10px; border:1px solid rgba(148,163,184,.22); background:#0b162b; color:var(--text); padding:.7rem;"></textarea>
+          <div style="display:flex; gap:.6rem; margin-top:.7rem; flex-wrap:wrap">
+            <button class="btn" type="submit">Kirim via WhatsApp</button>
+            <a class="btn" style="background:linear-gradient(135deg,#22c55e,#86efac)" href="mailto:hello@example.com?subject=Permintaan%20Penawaran%20Website">Kirim Email</a>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 CV. RY Web Systems. All rights reserved.</p>
+    <div class="wrap" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap">
+      <div>© <span id="y"></span> CV. RY Web Systems</div>
+      <div class="mute">Made with ❤ — Website & Systems</div>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
