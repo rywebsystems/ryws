@@ -77,6 +77,40 @@
       .hero { grid-template-columns: 1fr; }
       .kpis { grid-template-columns: 1fr 1fr; }
     }
+    /* ✅ Default untuk desktop (PC) */
+.grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+/* 📱 Mobile (HP) */
+@media (max-width: 600px) {
+  .hero { grid-template-columns: 1fr; }         /* hero jadi 1 kolom */
+  .kpis { grid-template-columns: 1fr; }        /* KPI jadi 1 kolom */
+  .services { grid-template-columns: 1fr; }    /* layanan 1 kolom */
+  .portfolio { grid-template-columns: 1fr; }   /* portofolio 1 kolom */
+  .cols-2 { grid-template-columns: 1fr; }      /* harga/faq jadi 1 kolom */
+  nav { flex-direction: column; gap: .5rem; }  /* menu ke bawah */
+}
+
+/* 📲 Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .services { grid-template-columns: 1fr 1fr; }
+  .portfolio { grid-template-columns: 1fr 1fr; }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* 💻 Desktop (default lebih besar dari 900px) */
+@media (min-width: 901px) {
+  .hero { grid-template-columns: 1.15fr .85fr; }
+  .kpis { grid-template-columns: repeat(3,1fr); }
+  .services { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .portfolio { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+}
+
   </style>
   <script type="application/ld+json">
   {
@@ -380,3 +414,4 @@ Umumnya 7–21 hari tergantung kompleksitas & jumlah halaman.
   </script>
 </body>
 </html>
+
